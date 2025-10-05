@@ -2,20 +2,15 @@
 // Este archivo contiene las URLs de los microservicios
 
 const config = {
-  // MS4 - Aggregator Service (puerto 8080)
-  AGGREGATOR_URL: process.env.REACT_APP_AGGREGATOR_URL || 'http://alb-campus-well-786102414.us-east-1.elb.amazonaws.com:8080',
+  // Base API URL from Amplify environment or fallback to API Gateway
+  API_BASE_URL: process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod',
   
-  // MS1 - Psychology Service (puerto 8081)
-  PSYCH_URL: process.env.REACT_APP_PSYCH_URL || 'http://alb-campus-well-786102414.us-east-1.elb.amazonaws.com:8081',
-  
-  // MS2 - Sports Service (puerto 8082)
-  SPORTS_URL: process.env.REACT_APP_SPORTS_URL || 'http://alb-campus-well-786102414.us-east-1.elb.amazonaws.com:8082',
-  
-  // MS3 - Habits Service (puerto 8083)
-  HABITS_URL: process.env.REACT_APP_HABITS_URL || 'http://alb-campus-well-786102414.us-east-1.elb.amazonaws.com:8083',
-  
-  // MS5 - Analytics Service (puerto 8084)
-  ANALYTICS_URL: process.env.REACT_APP_ANALYTICS_URL || 'http://alb-campus-well-786102414.us-east-1.elb.amazonaws.com:8084',
+  // Individual service URLs using API Gateway routes
+  AGGREGATOR_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/aggregator`,
+  PSYCH_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/psych`,
+  SPORTS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/sports`,
+  HABITS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/habits`,
+  ANALYTICS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/analytics`,
   
   // Configuración adicional
   APP_NAME: process.env.REACT_APP_APP_NAME || 'CampusWell',
