@@ -2,15 +2,12 @@
 // Este archivo contiene las URLs de los microservicios
 
 const config = {
-  // Base API URL from Amplify environment or fallback to API Gateway
-  API_BASE_URL: process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod',
-  
-  // Individual service URLs using API Gateway routes
-  AGGREGATOR_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/aggregator`,
-  PSYCH_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/psych`,
-  SPORTS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/sports`,
-  HABITS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/habits`,
-  ANALYTICS_URL: `${process.env.REACT_APP_API_URL || 'https://3u3xabplnf.execute-api.us-east-1.amazonaws.com/prod'}/analytics`,
+  // New API Gateway URLs configured by backend team - HTTPS enabled
+  AGGREGATOR_URL: 'https://xyaqujygc8.execute-api.us-east-1.amazonaws.com/aggregator',
+  PSYCH_URL: 'https://xyaqujygc8.execute-api.us-east-1.amazonaws.com/psych',
+  SPORTS_URL: 'https://xyaqujygc8.execute-api.us-east-1.amazonaws.com/sports', 
+  HABITS_URL: 'https://xyaqujygc8.execute-api.us-east-1.amazonaws.com/habits',
+  ANALYTICS_URL: 'https://xyaqujygc8.execute-api.us-east-1.amazonaws.com/analytics',
   
   // Configuración adicional
   APP_NAME: process.env.REACT_APP_APP_NAME || 'CampusWell',
