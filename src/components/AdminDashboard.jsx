@@ -150,11 +150,11 @@ const AdminDashboard = () => {
         <div className="p-6">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {[
-              { key: 'aggregator', name: 'Aggregator', port: '8080', docs: '/docs' },
-              { key: 'psych', name: 'Psychology', port: '8081', docs: '/swagger-ui.html' },
-              { key: 'sports', name: 'Sports', port: '8082', docs: '/docs' },
-              { key: 'habits', name: 'Habits', port: '8083', docs: '/swagger-ui.html' },
-              { key: 'analytics', name: 'Analytics', port: '8084', docs: '/docs' }
+              { key: 'aggregator', name: 'Aggregator', port: '8080', docs: '/docs', docsUrl: 'https://p1ag1aonh9.execute-api.us-east-1.amazonaws.com/aggregator/docs' },
+              { key: 'psych', name: 'Psychology', port: '8081', docs: '/docs', docsUrl: 'https://p1ag1aonh9.execute-api.us-east-1.amazonaws.com/psych/docs' },
+              { key: 'sports', name: 'Sports', port: '8082', docs: '/docs', docsUrl: 'https://p1ag1aonh9.execute-api.us-east-1.amazonaws.com/sports/docs' },
+              { key: 'habits', name: 'Habits', port: '8083', docs: '/docs', docsUrl: 'https://p1ag1aonh9.execute-api.us-east-1.amazonaws.com/habits/docs' },
+              { key: 'analytics', name: 'Analytics', port: '8084', docs: '/docs', docsUrl: 'https://p1ag1aonh9.execute-api.us-east-1.amazonaws.com/analytics/docs' }
             ].map((service) => {
               const health = getHealthStatus(service.key);
               return (
@@ -174,7 +174,7 @@ const AdminDashboard = () => {
                     {health.text}
                   </p>
                   <a
-                    href={`http://localhost:${service.port}${service.docs}`}
+                    href={service.docsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center"
