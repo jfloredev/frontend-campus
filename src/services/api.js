@@ -101,7 +101,7 @@ class ApiService {
    * @returns {Promise<Object>} - Evento creado
    */
   async createEvent(eventData) {
-    return this.requestAbs(this.buildUrl(SPO_BASE, '/events'), {
+    return this.requestAbs(this.buildUrl(SPO_BASE, `/events`), {
       method: 'POST',
       body: JSON.stringify(eventData),
     });
@@ -137,7 +137,7 @@ class ApiService {
    * @returns {Promise<Object>} - Hábito creado
    */
   async createHabit(habitData) {
-    return this.requestAbs(this.buildUrl(HAB_BASE, '/habits'), {
+    return this.requestAbs(this.buildUrl(HAB_BASE, `/habits`), {
       method: 'POST',
       body: JSON.stringify(habitData),
     });
@@ -223,6 +223,10 @@ class ApiService {
   // analytics-svc (Athena)
   async analyticsStressTrends() {
     return this.requestAbs(this.buildUrl(ANA_BASE, `/analytics/stress-trends`));
+  }
+  async analyticsAgeRange() {
+    // El endpoint mantiene el nombre legacy pero ahora devuelve métricas de hábitos por estado de ánimo
+    return this.requestAbs(this.buildUrl(ANA_BASE, `/analytics/age-range`));
   }
   async analyticsHealth() {
     return this.requestAbs(this.buildUrl(ANA_BASE, `/health`));
